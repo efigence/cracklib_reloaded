@@ -2,6 +2,10 @@
 
 source 'https://rubygems.org'
 
+group :development do
+  gem 'github_changelog_generator'
+end
+
 group :development, :test do
   gem 'fuubar'
   gem 'guard'
