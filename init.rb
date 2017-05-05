@@ -14,4 +14,15 @@ end
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, RUBY_ENV)
 
-# require_relative './lib/my_lib.rb' # require there more files from lib/my_lib/
+# binding.irb
+require 'irb' if RUBY_ENV == 'development'
+
+# require there more files from lib/my_lib/
+require_relative './lib/cracklib_reloaded.rb'
+
+password = CracklibReloaded::Password.new
+password.weak?(ARGV.first)
+puts 'Equivalent of ActiveModel::Errors#messages'
+puts password.errors.to_h
+puts password.errors.to_a.inspect
+exit 1 unless password.errors.any?
