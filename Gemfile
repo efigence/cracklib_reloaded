@@ -2,6 +2,8 @@
 
 source 'https://rubygems.org'
 
+gem 'ffi'
+
 group :development do
   gem 'github_changelog_generator'
 end
