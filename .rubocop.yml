@@ -8,6 +8,7 @@ inherit_from: .rubocop_todo.yml
 
 AllCops:
   EnabledByDefault: true
+  TargetRubyVersion: 2.4
 
 # Redefined
 
@@ -19,8 +20,13 @@ Metrics/LineLength:
 Style/Documentation:
   Enabled: false
 
+# Disabled (again)
+
 Style/Copyright:
   Enabled: false
 
 Style/MethodCallWithArgsParentheses:
+  Enabled: false
+
+Style/DocumentationMethod:
   Enabled: false
