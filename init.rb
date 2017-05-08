@@ -8,4 +8,4 @@ password.weak?(ARGV.first)
 puts 'Equivalent of ActiveModel::Errors#messages'
 puts password.errors.to_h
 puts password.errors.to_a.inspect
-exit 1 unless password.errors.any?
+exit 1 if password.errors.any?
