@@ -8,6 +8,35 @@ describe CracklibReloaded::Password do
   let(:strong_password) { '_#(FsĘ8=\'d*d}\"Ął' }
   let(:weak_password) { 'admin' }
 
+  describe '.new' do
+    context 'given nothing' do
+      it 'sets default cracklib dictionary path' do
+        expect(cracklib_reloaded.instance_variable_get(:@dict_path)).to be
+      end
+    end
+    context 'given the cracklib dictionary path as an argument' do
+      let(:dict_path) { '/tmp/foo/bar' }
+      let(:cracklib_reloaded) { described_class.new(dict_path) }
+
+      it 'sets provided path' do
+        expect(cracklib_reloaded.instance_variable_get(:@dict_path)).to equal(dict_path)
+      end
+    end
+  end
+
+  describe '#weak?' do
+    context 'given a weak password string' do
+      it 'returns true' do
+        expect(cracklib_reloaded.weak?(weak_password)).to be_truthy
+      end
+    end
+    context 'given a strong password string' do
+      it 'returns false' do
+        expect(cracklib_reloaded.weak?(strong_password)).to be_falsy
+      end
+    end
+  end
+
   describe '#errors' do
     context 'given a weak password string' do
       before { cracklib_reloaded.weak?(weak_password) }
@@ -28,7 +57,6 @@ describe CracklibReloaded::Password do
         expect(cracklib_reloaded.errors.to_h[:password].first.to_s).to match(/short/)
       end
     end
-
     context 'given a strong password string' do
       before { cracklib_reloaded.weak?(strong_password) }
 
