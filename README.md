@@ -25,7 +25,7 @@ password.weak?('admin123')
 ## Develop
 
 ```
-$ guard # require './init.rb'
+$ guard #  require './lib/cracklib_reloaded'
 ```
 
 ## Run script
