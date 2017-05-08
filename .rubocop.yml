@@ -18,6 +18,7 @@ Metrics/BlockLength:
   Exclude:
     - 'Guardfile'
     - '**/*_spec.rb'
+    - '*.gemspec'
 
 # https://github.com/bbatsov/rubocop/blob/master/config/enabled.yml
 

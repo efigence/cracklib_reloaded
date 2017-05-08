@@ -1,4 +1,8 @@
 # frozen_string_literal: true
 
 require_relative '../env'
-require_relative 'cracklib_reloaded/password'
+require 'cracklib_reloaded/version'
+require 'cracklib_reloaded/password'
+
+module CracklibReloaded
+end
