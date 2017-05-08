@@ -108,7 +108,7 @@ group 'specs', halt_on_fail: false do
   guard :rspec, all_on_start: true, cmd: 'rspec -c -fp' do
     watch(%r{^spec/.+_spec\.rb$})
     watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
-    watch('spec/spec_helper.rb')  { "spec/lib" }
+    watch('spec/spec_helper.rb')  { 'spec/lib' }
   end
 
   guard :rubocop, all_on_start: true, cmd: 'rubocop --format fuubar -F -D' do
