@@ -299,3 +299,6 @@ tags
 
 # rspec failure tracking
 .rspec_status
+
+# Custom output
+rubocop_output.json
