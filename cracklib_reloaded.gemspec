@@ -10,8 +10,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Marcin Kalita']
   spec.email         = ['rubyconvict@gmail.com']
 
-  spec.summary       = 'Write a short summary, because Rubygems requires one.'
-  spec.description   = 'Write a longer description or delete this line.'
+  spec.summary       = 'Use CrackLib for Ruby to require stronger passwords.'
+  spec.description   = 'CrackLib is a library for checking that a password is ' \
+    'not based on a simple character pattern or on a dictionary word.'
   spec.homepage      = 'https://github.com/efigence/cracklib_reloaded'
   spec.license       = 'MIT'
 
@@ -25,7 +26,9 @@ Gem::Specification.new do |spec|
   end
 
   spec.files         =
-    `git ls-files -z`.split("\x0").reject do |f|
+    # `git ls-files -z`.split("\x0")
+    # bundle exec manifest save
+    File.read('Manifest.txt').split("\n").reject do |f|
       f.match(%r{^(test|spec|features)/})
     end
 
@@ -50,4 +53,5 @@ Gem::Specification.new do |spec|
   # gem uninstall rubocop && gem install rubocop -v='0.39'
   # https://github.com/backus/rubocop-rspec/issues/153
   spec.add_development_dependency 'rubocop-rspec'
+  spec.add_development_dependency 'rubygems-manifest'
 end
