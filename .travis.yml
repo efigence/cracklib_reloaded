@@ -1,11 +1,23 @@
-sudo: false
+sudo: required
 language: ruby
 rvm:
   - 2.4.0
+addons:
+  apt:
+    packages:
+      - language-pack-en
+      - language-pack-en-base
+      - libcrack2
+      - cracklib-devel
+env:
+  global:
+    - LANG=en_US.UTF-8
+    - LC_ALL=en_US.UTF-8
+    - LANGUAGE=en_US.UTF-8
+# `cache` is only available for private projects
+cache: bundler
 before_install:
   - gem update --system --no-doc
   - gem install bundler -v 1.14.6 --no-doc
 after_success:
   - bundle exec codeclimate-test-reporter
-# `cache` is only available for private projects
-cache: bundler
