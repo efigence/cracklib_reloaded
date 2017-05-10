@@ -1,5 +1,21 @@
 # frozen_string_literal: true
 
+if ENV['CI']
+  require 'codeclimate-test-reporter'
+  require 'coveralls'
+  require 'simplecov-console'
+
+  formatter = [CodeClimate::TestReporter::Formatter,
+               Coveralls::SimpleCov::Formatter,
+               SimpleCov::Formatter::Console,
+               SimpleCov::Formatter::HTMLFormatter]
+  SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(formatter)
+  SimpleCov.start
+else
+  require 'simplecov'
+  SimpleCov.start
+end
+
 RUBY_ENV = 'test'
 
 require 'bundler/setup'

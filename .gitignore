@@ -95,7 +95,8 @@ Temporary Items
 ### Rails ###
 *.rbc
 capybara-*.html
-.rspec
+# use .rspec-local to override
+# .rspec
 /log
 /tmp
 /db/*.sqlite3
@@ -121,6 +122,7 @@ config/initializers/secret_token.rb
 /vendor/bundle
 
 # these should all be checked in to normalize the environment:
+# but not if this is a gem:
 Gemfile.lock
 .ruby-version
 .ruby-gemset

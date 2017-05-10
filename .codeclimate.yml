@@ -1,0 +1,27 @@
+---
+engines:
+  fixme:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - ruby
+  rubocop:
+    enabled: true
+  reek:
+    enabled: true
+  flog:
+    enabled: true
+    config:
+      score_threshold: 20.0
+  bundler-audit:
+    enabled: true
+ratings:
+  paths:
+  - Gemfile.lock
+  - "**.rb"
+exclude_paths:
+- "tests/"
+- "spec/"
+- "**/vendor/"
