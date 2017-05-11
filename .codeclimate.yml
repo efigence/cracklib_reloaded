@@ -15,11 +15,12 @@ engines:
     enabled: true
     config:
       score_threshold: 20.0
-  bundler-audit:
-    enabled: true
+  # https://github.com/rubysec/bundler-audit/pull/87/commits/59b50f8423cba24dbb6cde3ad7df0358c77bbd29
+  # bundler-audit:
+  #   enabled: true
 ratings:
   paths:
-  - Gemfile.lock
+  # - Gemfile.lock
   - "**.rb"
 exclude_paths:
 - "tests/"
