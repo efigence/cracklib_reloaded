@@ -1,4 +1,4 @@
-# CracklibReloaded
+# CracklibReloaded [![Gem Version](https://badge.fury.io/rb/cracklib_reloaded.svg)](https://badge.fury.io/rb/cracklib_reloaded) [![Build Status](https://travis-ci.org/efigence/cracklib_reloaded.svg?branch=master)](https://travis-ci.org/efigence/cracklib_reloaded) [![Coverage Status](https://coveralls.io/repos/github/efigence/cracklib_reloaded/badge.svg?branch=master)](https://coveralls.io/github/efigence/cracklib_reloaded?branch=master) [![Code Climate](https://codeclimate.com/github/efigence/cracklib_reloaded/badges/gpa.svg)](https://codeclimate.com/github/efigence/cracklib_reloaded)
 
 CrackLib is a library for checking that a password is not based on a simple character pattern or on a dictionary word.
 
