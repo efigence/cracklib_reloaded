@@ -36,7 +36,7 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'ffi', '~> 1.9', '>= 1.9.18'
+  spec.add_dependency 'ffi', '~> 1', '>= 1.0.0'
 
   # http://yehudakatz.com/2010/12/16/clarifying-the-roles-of-the-gemspec-and-gemfile/
   spec.add_development_dependency 'bundler', '~> 1.14'
