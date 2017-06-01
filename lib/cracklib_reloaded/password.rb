@@ -6,10 +6,16 @@ module CracklibReloaded
   module CracklibReloadedFfiMixin
     extend FFI::Library
     libcrack_so_paths = []
-    libcrack_so_paths << ENV['LIBCRACK_SO_PATH'].to_s
-    libcrack_so_paths << '/usr/lib/libcrack.so.2' if 0.to_i.size != 8
-    libcrack_so_paths << '/usr/lib64/libcrack.so.2'
-    libcrack_so_paths << '/usr/lib/x86_64-linux-gnu/libcrack.so.2'
+    libcrack_so_paths << ENV['LIBCRACK_SO_PATH'].to_s if ENV['LIBCRACK_SO_PATH']
+    interpreter_bytes = 0.to_i.size
+    interpreter_bits = interpreter_bytes * 8
+    if interpreter_bits == 32
+      libcrack_so_paths << '/usr/lib/libcrack.so.2'
+      libcrack_so_paths << '/usr/lib/i386-linux-gnu/libcrack.so.2'
+    else
+      libcrack_so_paths << '/usr/lib64/libcrack.so.2'
+      libcrack_so_paths << '/usr/lib/x86_64-linux-gnu/libcrack.so.2'
+    end
     LIBCRACK_SO_PATH = libcrack_so_paths.select { |file| File.readable?(file) }.first.freeze
 
     ffi_lib LIBCRACK_SO_PATH

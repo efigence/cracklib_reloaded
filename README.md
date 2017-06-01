@@ -4,8 +4,9 @@ CrackLib is a library for checking that a password is not based on a simple char
 
 ## Dependencies
 
+* CENTOS 5.x: sudo yum install cracklib cracklib-dicts
 * CENTOS 6.x: sudo yum install cracklib cracklib-devel
-* UBUNTU: sudo apt-get install libcrack2 cracklib-devel
+* UBUNTU: sudo apt-get install cracklib-runtime
 * MAC: sudo port install cracklib cracklib-words
 
 ## Installation

@@ -7,7 +7,6 @@ addons:
     packages:
       - language-pack-en
       - language-pack-en-base
-      - libcrack2
       - cracklib-runtime
 env:
   global:
@@ -16,6 +15,8 @@ env:
     - LANGUAGE=en_US.UTF-8
 # `cache` is only available for private projects
 cache: bundler
+before_script:
+  - unset LIBCRACK_SO_PATH
 before_install:
   - gem update --system --no-doc
   - gem install bundler -v 1.14.6 --no-doc
