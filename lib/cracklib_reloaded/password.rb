@@ -13,15 +13,14 @@ module CracklibReloaded
       libcrack_so_paths << '/usr/lib64/libcrack.so.2'
       libcrack_so_paths << '/usr/lib/x86_64-linux-gnu/libcrack.so.2'
     end
-    libcrack_so_paths << '/usr/lib/libcrack.so.2'
+    libcrack_so_paths << '/usr/lib/libcrack.so.2' # generic
     libcrack_so_paths << '/usr/lib/i386-linux-gnu/libcrack.so.2'
     LIBCRACK_SO_PATH = libcrack_so_paths.select { |file| File.readable?(file) }.first.freeze
 
-    raise "Using: #{LIBCRACK_SO_PATH} from #{libcrack_so_paths}".inspect
-    # ffi_lib LIBCRACK_SO_PATH
+    ffi_lib LIBCRACK_SO_PATH
 
-    #attach_function :cracklib_default_dict, :GetDefaultCracklibDict, [], :string
-    #attach_function :cracklib_check, :FascistCheck, %i[string string], :string
+    attach_function :cracklib_default_dict, :GetDefaultCracklibDict, [], :string
+    attach_function :cracklib_check, :FascistCheck, %i[string string], :string
   end
 
   class Password
