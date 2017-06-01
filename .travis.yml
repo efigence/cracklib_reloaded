@@ -7,6 +7,8 @@ addons:
     packages:
       - language-pack-en
       - language-pack-en-base
+      - libcrack2
+      - libcrack2-dev
       - cracklib-runtime
 env:
   global:
