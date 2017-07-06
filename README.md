@@ -56,7 +56,7 @@ $ guard #  require './lib/cracklib_reloaded'
 
 ## Run script
 
-CAUTION: Using password as a script argument may not safe
+CAUTION: Using password as a script argument may not be safe
 
 ```
 $ ruby init.rb 'admin123'
