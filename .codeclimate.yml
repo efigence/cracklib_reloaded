@@ -23,6 +23,6 @@ ratings:
   # - Gemfile.lock
   - "**.rb"
 exclude_paths:
-- "tests/"
+- "test/"
 - "spec/"
 - "**/vendor/"
