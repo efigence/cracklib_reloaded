@@ -1,3 +1,4 @@
+.codeclimate.yml
 .gitignore
 .rspec
 .rubocop.yml
@@ -8,6 +9,7 @@ CODE_OF_CONDUCT.md
 Gemfile
 Guardfile
 LICENSE.txt
+Manifest.txt
 README.md
 Rakefile
 bin/console
