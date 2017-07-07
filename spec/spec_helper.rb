@@ -20,7 +20,6 @@ SimpleCov.start
 RUBY_ENV = 'test'
 
 require 'bundler/setup'
-require_relative '../env'
 require 'cracklib_reloaded'
 
 RSpec.configure do |config|
