@@ -5,16 +5,17 @@ if ENV['CI']
   require 'coveralls'
   require 'simplecov-console'
 
-  formatter = [CodeClimate::TestReporter::Formatter,
-               Coveralls::SimpleCov::Formatter,
-               SimpleCov::Formatter::Console,
-               SimpleCov::Formatter::HTMLFormatter]
+  formatter = [
+    CodeClimate::TestReporter::Formatter,
+    Coveralls::SimpleCov::Formatter,
+    SimpleCov::Formatter::Console,
+    SimpleCov::Formatter::HTMLFormatter
+  ]
   SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new(formatter)
-  SimpleCov.start
 else
   require 'simplecov'
-  SimpleCov.start
 end
+SimpleCov.start
 
 RUBY_ENV = 'test'
 

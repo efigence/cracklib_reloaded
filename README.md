@@ -31,7 +31,10 @@ Or install it yourself as:
 
 ## Usage
 
+    $ bundle exec irb
+
 ```
+require_relative 'env'
 password = CracklibReloaded::Password.new
 password.weak?('admin123')
 => true

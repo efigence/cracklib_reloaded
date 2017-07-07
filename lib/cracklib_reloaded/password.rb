@@ -13,7 +13,8 @@ module CracklibReloaded
       libcrack_so_paths << '/usr/lib64/libcrack.so.2'
       libcrack_so_paths << '/usr/lib/x86_64-linux-gnu/libcrack.so.2'
     end
-    libcrack_so_paths << '/usr/lib/libcrack.so.2' # generic
+    # generic
+    libcrack_so_paths << '/usr/lib/libcrack.so.2'
     libcrack_so_paths << '/usr/lib/i386-linux-gnu/libcrack.so.2'
     LIBCRACK_SO_PATH = libcrack_so_paths.select { |file| File.readable?(file) }.first.freeze
 
